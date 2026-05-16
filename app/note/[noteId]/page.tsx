@@ -8,6 +8,6 @@ export default async function Note({ params }: RouteParam) {
     let { noteId } = await params
     if (parseInt(noteId) > 10 && parseInt(noteId) != 67) notFound()
     return (
-        <p>{ noteId }</p>
+        <p className="text-center">{ noteId }</p>
     )
 }
