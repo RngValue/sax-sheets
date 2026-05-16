@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <html style={ fontUnkept.style }>
             <title>lol</title>
             <body>
-                {children}
+                { children }
             </body>
         </html>
     )
