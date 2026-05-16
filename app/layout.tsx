@@ -1,5 +1,5 @@
-import "./styles.css"
-import { Unkempt } from "next/font/google";
+import "@/app/styles.css"
+import { Unkempt } from "next/font/google"
 
 const fontUnkept = Unkempt({ weight: ["400", "700"] })
 
