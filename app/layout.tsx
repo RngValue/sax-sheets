@@ -5,7 +5,7 @@ const fontUnkept = Unkempt({ weight: ["400", "700"] })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <html style={ fontUnkept.style }>
+        <html lang="en" style={ fontUnkept.style }>
             <title>lol</title>
             <body>
                 { children }
