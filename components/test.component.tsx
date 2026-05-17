@@ -4,6 +4,6 @@ type WhatIExpect = {
 
 export default function Test(props: WhatIExpect) {
     return (
-        <p>very epic { props.lol || "lol" }</p>
+        <p className="text-center pb-6">very epic { props.lol || "lol" }</p>
     )
 }
