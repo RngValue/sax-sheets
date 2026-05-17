@@ -7,7 +7,9 @@ export default function Home() {
             <h1 className="text-center pt-6 pb-6">WOW</h1>
             <Test />
             <Test lol="a" />
-            <EpicButton />
+            <div className="ms-4 me-4">
+                <EpicButton />
+            </div>
         </>
     )
 }
