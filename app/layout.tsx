@@ -2,6 +2,7 @@ import "@/app/styles.css"
 import { Roboto_Slab, DM_Sans } from "next/font/google"
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
 
 const dmSansHeading = DM_Sans({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <TooltipProvider>
                     { children }
                 </TooltipProvider>
+                <Toaster />
             </body>
         </html>
     )
