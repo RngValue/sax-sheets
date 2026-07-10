@@ -29,7 +29,7 @@ export default function Home() {
                 />
             </div>
             <br />
-            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
                 {[...Array(32).keys()].map((num, index) => (
                     <Note key={index} notes={notesArray} note={num} transpose={transposeValue}></Note>
                 ))}
