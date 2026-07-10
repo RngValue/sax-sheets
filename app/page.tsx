@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function Home() {
     const DEFAULT_NOTE = 12
-    const notesArray = ['C', 'C♯ D♭', 'D', 'D♯ E♭', 'E', 'F', 'F♯ G♭', 'G', 'G♯ A♭', 'A', 'A♯ B♭/H♭', 'B/H']
+    const notesArray = ['C', 'C♯ D♭', 'D', 'D♯ E♭', 'E', 'F', 'F♯ G♭', 'G', 'G♯ A♭', 'A', 'A♯ B♭', 'B']
     let [transposeValue, setTransposeValue] = useState<number>(DEFAULT_NOTE);
     return (
         <>
@@ -21,6 +21,7 @@ export default function Home() {
                 </div>
                 <Slider
                     defaultValue={[DEFAULT_NOTE]}
+                    min={2}
                     max={notesArray.length * 2}
                     step={1}
                     onValueChange={(value) => setTransposeValue(value[0])}

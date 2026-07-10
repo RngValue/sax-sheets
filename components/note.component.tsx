@@ -12,16 +12,17 @@ export default function Note(props: whatIExpect) {
     return <>
         <Card className="relative mx-auto w-full max-w-sm pt-0">
             <CardHeader>
-                <CardTitle className="mt-4">{ props.notes[realNote] }</CardTitle>
-                <CardDescription>
-                    A practical talk on component APIs, accessibility, and shipping
-                    faster.
-                </CardDescription>
+                <CardTitle className="mt-4 flex items-center justify-between gap-2">
+                    <big>{ props.notes[realNote] }</big>
+                    <span className="text-sm text-muted-foreground">
+                        tuned for { props.notes[props.transpose % props.notes.length] }
+                    </span>
+                </CardTitle>
             </CardHeader>
             <img
                 src={ `/notes/${props.note}.jpg` }
                 alt={ props.notes[realNote] }
-                className="relative z-20 aspect-video w-full"
+                className="relative z-20 w-full"
             />
         </Card>
     </>
