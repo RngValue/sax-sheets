@@ -20,7 +20,7 @@ export default function Note(props: whatIExpect) {
                 </CardTitle>
             </CardHeader>
             <img
-                src={ `/notes/${props.note}.jpg` }
+                src={ `notes/${props.note}.jpg` }
                 alt={ props.notes[realNote] }
                 className="relative z-20 w-full"
             />
