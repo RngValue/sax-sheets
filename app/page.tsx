@@ -1,29 +1,40 @@
-import Image from "next/image";
+'use client'
 
-export default function HomePage() {
-   return (
-      <>
-         <p><br /></p>
-         <h1 className="text-center text-accent text-xl">Welcome Home</h1>
-         <p><br /></p>
-         <p className="text-center text-base">This is a home page!</p>
-         <p className="text-center text-base">Expect crap in here :3</p>
-         <p><br /></p>
+import Note from "@/components/note.component";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
 
-         <button className='btn btn-accent w-48 justify-self-center'>Very Nice Button</button>
-         <p><br /></p>
-
-         <div className="bg-base-200 sm:rounded-lg sm:ml-10 sm:mr-10">
-            <p><br /></p>
-            <h2 className="pl-10 md:pl-20 text-primary text-lg">More content???</h2>
-            <p className="pl-5 pr-5 md:pl-16 md:pr-16">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae iste nam vel, itaque obcaecati autem maxime consequuntur accusamus fugit quidem.</p>
-            <p className="pl-5 pr-5 md:pl-16 md:pr-16">yes, there's more.</p>
-            <p><br /></p>
-         </div>
-         <p><br /></p>
-         <h2 className="pl-10 md:pl-20 text-accent text-lg">Such beauty</h2>
-         <p className="pl-10 pr-10 md:pl-16 md:pr-16">fortnite... yes I just ruined the beauty</p>
-         <div className="divider"></div>
-      </>
-   );
+export default function Home() {
+    const DEFAULT_NOTE = 12
+    const notesArray = ['C', 'C♯ D♭', 'D', 'D♯ E♭', 'E', 'F', 'F♯ G♭', 'G', 'G♯ A♭', 'A', 'A♯ B♭', 'B']
+    let [transposeValue, setTransposeValue] = useState<number>(DEFAULT_NOTE);
+    return (
+        <>
+            <h1 className="text-center pt-6 pb-6">WOW</h1>
+            <div className="mx-auto grid w-full max-w-xs gap-3">
+                <div className="flex items-center justify-between gap-2">
+                    <Label htmlFor="slider-demo-temperature">Transpose</Label>
+                    <span className="text-sm text-muted-foreground">
+                        {notesArray[transposeValue % notesArray.length]}
+                    </span>
+                </div>
+                <Slider
+                    defaultValue={[DEFAULT_NOTE]}
+                    min={2}
+                    max={notesArray.length * 2}
+                    step={1}
+                    onValueChange={(value) => setTransposeValue(value[0])}
+                    className="mx-auto w-full max-w-xs"
+                />
+            </div>
+            <br />
+            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+                {[...Array(32).keys()].map((num, index) => (
+                    <Note key={index} notes={notesArray} note={num} transpose={transposeValue}></Note>
+                ))}
+            </div>
+            <br />
+        </>
+    )
 }
