@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Home() {
     const DEFAULT_NOTE = 12
     const notesArray = ['C', 'C♯ D♭', 'D', 'D♯ E♭', 'E', 'F', 'F♯ G♭', 'G', 'G♯ A♭', 'A', 'A♯ B♭/H♭', 'B/H']
-    let [transposeValue, setTransposeValue] = useState(DEFAULT_NOTE);
+    let [transposeValue, setTransposeValue] = useState<number>(DEFAULT_NOTE);
     return (
         <>
             <h1 className="text-center pt-6 pb-6">WOW</h1>
@@ -23,13 +23,14 @@ export default function Home() {
                     defaultValue={[DEFAULT_NOTE]}
                     max={notesArray.length * 2}
                     step={1}
-                    onValueChange={(value) => setTransposeValue(value as unknown as number)}
+                    onValueChange={(value) => setTransposeValue(value[0])}
                     className="mx-auto w-full max-w-xs"
                 />
             </div>
             <br />
-
-            <Note notes={notesArray} note={0} transpose={transposeValue}></Note>
+            {[...Array(32).keys()].map((num, index) => (
+                <Note key={index} notes={notesArray} note={num} transpose={transposeValue}></Note>
+            ))}
         </>
     )
 }

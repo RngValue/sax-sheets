@@ -19,9 +19,9 @@ export default function Note(props: whatIExpect) {
                 </CardDescription>
             </CardHeader>
             <img
-                src="https://avatar.vercel.sh/shadcn1"
-                alt="Event cover"
-                className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+                src={ `/notes/${props.note}.jpg` }
+                alt={ props.notes[realNote] }
+                className="relative z-20 aspect-video w-full"
             />
         </Card>
     </>
