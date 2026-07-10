@@ -1,5 +1,4 @@
-import { Button } from "./ui/button";
-import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 type whatIExpect = {
     note: number,
@@ -10,7 +9,7 @@ export default function Note(props: whatIExpect) {
     const TOTAL_NOTES = 12
     const notesArray = ['C', 'C♯ D♭', 'D', 'D♯ E♭', 'E', 'F', 'F♯ G♭', 'G', 'G♯ A♭', 'A', 'A♯ B♭/H♭', 'B/H']
 
-    let realNote = (props.note + props.transpose) % TOTAL_NOTES - 1
+    let realNote = (props.note + props.transpose) % TOTAL_NOTES
 
     return <>
         <Card className="relative mx-auto w-full max-w-sm pt-0">
