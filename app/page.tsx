@@ -24,9 +24,7 @@ export default function Home() {
         scales[currentScale].map((num: number, index: number) => {
             scales[currentScale][index] = (num + rootNote) % notesArray.length
         })
-        console.log(scales[currentScale].toString())
     }
-    console.log(currentScale)
     return (
         <>
             <h1 className="text-center pt-6 pb-6">WOW ({ currentScale })</h1>
